@@ -42,10 +42,10 @@ in
   # home.file = {
   # };
 
-  home.sessionPath = [
-    "$HOME/.local/bin"
-    "$HOME/.cargo/bin"
-  ];
+  # home.sessionPath = [
+  #   "$HOME/.local/bin"
+  #   "$HOME/.cargo/bin"
+  # ];
 
   home.sessionVariables = {
     EDITOR = "nvim";
@@ -68,6 +68,7 @@ in
   programs.fish = {
     enable = true;
     interactiveShellInit = ''
+      set -x PATH $HOME/.local/bin $HOME/.cargo/bin $PATH
       fish_vi_key_bindings
       fish_config theme choose "rosepine"
 
